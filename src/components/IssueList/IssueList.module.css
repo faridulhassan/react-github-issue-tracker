@@ -1,0 +1,263 @@
+/*
+====================
+IssueListContainer
+====================
+*/
+.list-container {
+    padding: 100px 0 40px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1200px) {
+    .list-container {
+        padding-top: 163px;
+        padding-bottom: 128px;
+        max-width: 80%;
+    }
+}
+
+
+.page-header {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.badge {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(230, 231, 233, 0.5);
+    padding: 3px 6px;
+    margin-left: 10px;
+    min-width: 37px;
+    height: 23px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+}
+
+/*List Table*/
+.list-table {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/*Header*/
+.list-container__header {
+    background-color: #1d243e;
+    padding: 15px 26px 19px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px 4px 0 0;
+}
+
+nav {
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #E6E7E9;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 5px 5px 0;
+    transition: opacity 0.1s;
+}
+
+nav li:not(.active) {
+    opacity: 0.5;
+}
+
+nav li.active {
+    color: white;
+}
+
+nav li:not(:last-child) {
+    margin-right: 25px;
+}
+
+
+nav .header__icon {
+    display: block;
+    margin-right: 8px;
+}
+
+/*Body*/
+
+
+/*Footer*/
+
+/*
+====================
+IssueListItem
+====================
+*/
+.list-item {
+    padding: 17px 26px 24px 24px;
+    background-color: #030b28;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 0 0 1px;
+    transition: background-color 0.1s ease;
+}
+
+.list-item:last-child {
+    /*border-radius: 0 0 4px 4px;*/
+    border-bottom: none;
+}
+
+.list-item:hover {
+    background-color: #1d243e;
+}
+
+.list-item__inner-content {
+    padding-left: 26px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.list-item__left {
+    flex: 1;
+}
+
+.list-item__right {
+    margin-left: 10px;
+}
+
+.list-item__right a {
+    display: flex;
+    opacity: 0.5;
+    color: #E6E7E9;
+}
+
+.list-item__right a:hover {
+    opacity: 0.8;
+}
+
+.list-item__right .comment-counter {
+    margin-left: 7px;
+}
+
+/*List icon*/
+.list-item-status-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.list-item-status-icon > svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.list-item a {
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.list-item .title {
+    font-size: 14px;
+    color: #E6E7E9;
+    font-weight: 600;
+    margin-bottom: 2px;
+    display: inline-block;
+}
+
+.list-item .title:hover {
+    color: #3267f0;
+}
+
+.list-item .short-desc {
+    font-size: 12px;
+    color: rgba(230, 231, 233, 0.5);
+    font-weight: 500;
+}
+
+/*
+====================
+Pagination
+====================
+*/
+.pagination {
+    margin-top: 33px;
+    margin-bottom: 33px;
+}
+
+.pagination ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li {
+    margin: 0 2px;
+}
+
+.pagination a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    color: #E6E7E9;
+    display: block;
+    padding: 6px 10px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    transition: background-color 0.1s ease;
+}
+
+
+.pagination li.selected > a,
+.pagination li:hover > a {
+    background: #3267F0;
+}
+
+.pagination li.previous > a,
+.pagination li.next > a {
+    color: #3267F0;
+    background-color: transparent;
+}
+
+.pagination li.disabled > a {
+    cursor: not-allowed;
+    color: rgba(230, 231, 233, 0.5);
+}
+
+/*
+====================
+
+====================
+*/
+
+
+/*
+====================
+
+====================
+*/
