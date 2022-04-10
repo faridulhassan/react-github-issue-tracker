@@ -19,6 +19,7 @@ const Toast: React.FC<{ show?: boolean; message: string }> = ({
     <div
       ref={ref}
       className={`${styles["toast"]} ${isActive ? styles["show"] : ""}`}
+      data-testid="toast"
     >
       {message}
     </div>

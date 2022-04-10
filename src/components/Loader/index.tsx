@@ -10,7 +10,7 @@ const Loader: React.FC<{ isPageType?: boolean }> = ({
     <div
       className={`${styles["loader-wrapper"]} ${
         isPageType ? styles["page-loader"] : ""
-      }`}
+      }`} data-testid="loader-wrapper"
     >
       <div className={styles.loader} />
     </div>
