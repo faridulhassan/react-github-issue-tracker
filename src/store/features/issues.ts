@@ -11,6 +11,7 @@ export const initialState: IssueState = {
     loading: false,
     issueType: "open",
     page: 1,
+    perPage: 20,
     ownerName: "",
     repoName: "",
   },
@@ -72,11 +73,7 @@ export function fetchIssues(params: ApiParams) {
       } = params;
       const query = `q=repo:${ownerName}/${repoName} is:issue state:${issueType}&per_page=${perPage}&page=${page}`;
       const apiUrl = `https://api.github.com/search/issues?${query}`;
-      const response = await fetch(apiUrl, {
-        headers: {
-          authorization: "token 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",
-        },
-      });
+      const response = await fetch(apiUrl);
       const data = await response.json();
       if (!response.ok) {
         const errorMessage = data?.errors?.[0]?.message || data.message;
