@@ -15,13 +15,13 @@ import { Issue, issueTypesEnum } from "../../types";
 
 /*Store*/
 import { fetchIssues, setApiParams } from "../../store/features/issues";
-import { AppDispatch, RootState } from "../../store";
+import { RootState } from "../../store";
 
 /*Constants*/
 const issueTypes = [issueTypesEnum.Open, issueTypesEnum.Closed];
 
 const IssueList: React.FC = (): JSX.Element => {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
   const {
     issues,
     apiParams: {
@@ -32,11 +32,11 @@ const IssueList: React.FC = (): JSX.Element => {
       total_opened_count,
       ownerName,
       repoName,
+      perPage,
     },
   } = useSelector((state: RootState) => state.issuesReducer);
   const [activeIssueType, setActiveIssueType] = useState(issueTypes[0]);
 
-  const itemsPerPage = 30;
   const [pageCount, setPageCount] = useState(0);
 
   /*methods*/
@@ -45,7 +45,7 @@ const IssueList: React.FC = (): JSX.Element => {
     if (item === issueType) {
       return;
     }
-    dispatch(setApiParams({ page: 1, issueType: item }));
+    dispatch(setApiParams({ page: 1, issueType: item, total_count: 0 }));
   }
 
   function onPageChange(selectedItem: { selected: number }) {
@@ -58,7 +58,7 @@ const IssueList: React.FC = (): JSX.Element => {
     }
   }, [issueType, page]);
   useEffect(() => {
-    setPageCount(Math.ceil(total_count / itemsPerPage));
+    setPageCount(Math.ceil(total_count / perPage));
   }, [total_count]);
 
   return (

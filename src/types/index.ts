@@ -111,6 +111,7 @@ export interface IssueState {
     page: number;
     ownerName: string;
     repoName: string;
+    perPage: number;
   };
 }
 
