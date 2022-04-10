@@ -1,0 +1,20 @@
+.not-found-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #b21f1f;
+    font-size: 25px;
+}
+
+.link {
+    text-decoration: none;
+    color: rgba(230, 231, 233, 0.5);
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #fff;
+}
