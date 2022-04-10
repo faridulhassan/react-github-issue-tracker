@@ -12,6 +12,6 @@ describe("Test the loader", () => {
         render(<Toast message={message} />);
         const toast = screen.getByTestId("toast");
         expect(toast).toBeInTheDocument();
-        expect(toast.innerHTML).toHaveTextContent(message);
+        expect(toast).toHaveTextContent(message);
     });
 });
